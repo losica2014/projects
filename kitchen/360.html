@@ -138,6 +138,60 @@
             <!-- <button onclick="onChangeLightMode(2)">2</button> -->
         </div>
     </div>
+    <div>
+        <div id='vrview1'></div>
+        <script>
+            window.addEventListener('load', onVrViewLoad2);
+            var vrView;
+            var p = [
+                'https://losica2014.github.io/projects/src/kitchen/kitchen_cam360_light1.png',
+                'https://losica2014.github.io/projects/src/kitchen/kitchen_cam360_light2.png',
+                'https://losica2014.github.io/projects/src/kitchen/kitchen_cam360_light3.png',
+            ];
+            var p_size = {
+                width: 2048,
+                height: 1024
+            }
+            function onVrViewLoad2() {
+                // Selector '#vrview' finds element with id 'vrview'.
+                vrView = new VRView.Player('#vrview1', {
+                    image: p[1],
+                    is_stereo: false,
+                    width: window.innerWidth,
+                    height: p_size.height * window.innerWidth / p_size.width
+                });
+                // 2048 innerW
+                // 1024 innerH
+            }
+        </script>
+    </div>
+    <div>
+        <div id='vrview2'></div>
+        <script>
+            window.addEventListener('load', onVrViewLoad3);
+            var vrView;
+            var p = [
+                'https://losica2014.github.io/projects/src/kitchen/kitchen_cam360_light1.png',
+                'https://losica2014.github.io/projects/src/kitchen/kitchen_cam360_light2.png',
+                'https://losica2014.github.io/projects/src/kitchen/kitchen_cam360_light3.png',
+            ];
+            var p_size = {
+                width: 2048,
+                height: 1024
+            }
+            function onVrViewLoad3() {
+                // Selector '#vrview' finds element with id 'vrview'.
+                vrView = new VRView.Player('#vrview2', {
+                    image: p[2],
+                    is_stereo: false,
+                    width: window.innerWidth,
+                    height: p_size.height * window.innerWidth / p_size.width
+                });
+                // 2048 innerW
+                // 1024 innerH
+            }
+        </script>
+    </div>
 </body>
 
 </html>
