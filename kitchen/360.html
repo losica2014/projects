@@ -102,59 +102,20 @@
                 // 2048 innerW
                 // 1024 innerH
             }
-            function onChangeLightMode(id) {
-                if (vrView == null) {
-                    console.error("vrView is null");
-                    return;
-                }
-                vrView.setContent({
-                    image: p[id]
-                });
-            }
         </script>
-        <div class="switch">
-            <!-- <button onclick="onChangeLightMode(0)">0</button> -->
-            <span class="switch__label">Освещение: </span>
-            <!-- <input type="radio" id="trigger1" name="slider" onfocus="onChangeLightMode(0)" autofocus checked>
-    <label for="trigger1">1</label>
-    <input type="radio" id="trigger2" name="slider" onfocus="onChangeLightMode(1)">
-    <label for="trigger2">2</label> -->
-            <label for="trigger1" class="mdl-radio mdl-js-radio mdl-js-ripple-effect">
-                <input type="radio" id="trigger1" name="slider" class="mdl-radio__button" onfocus="onChangeLightMode(0)"
-                    autofocus checked>
-                <span class="mdl-radio__label">1</span>
-            </label>
-            <label for="trigger2" class="mdl-radio mdl-js-radio mdl-js-ripple-effect">
-                <input type="radio" id="trigger2" name="slider" class="mdl-radio__button"
-                    onfocus="onChangeLightMode(1)">
-                <span class="mdl-radio__label">2</span>
-            </label>
-            <label for="trigger3" class="mdl-radio mdl-js-radio mdl-js-ripple-effect">
-                <input type="radio" id="trigger3" name="slider" class="mdl-radio__button"
-                    onfocus="onChangeLightMode(2)">
-                <span class="mdl-radio__label">3</span>
-            </label>
-            <!-- <button onclick="onChangeLightMode(1)">1</button> -->
-            <!-- <button onclick="onChangeLightMode(2)">2</button> -->
-        </div>
     </div>
     <div>
         <div id='vrview1'></div>
         <script>
             window.addEventListener('load', onVrViewLoad2);
-            var vrView;
-            var p = [
-                'https://losica2014.github.io/projects/src/kitchen/kitchen_cam360_light1.png',
-                'https://losica2014.github.io/projects/src/kitchen/kitchen_cam360_light2.png',
-                'https://losica2014.github.io/projects/src/kitchen/kitchen_cam360_light3.png',
-            ];
+            var vrView1;
             var p_size = {
                 width: 2048,
                 height: 1024
             }
             function onVrViewLoad2() {
                 // Selector '#vrview' finds element with id 'vrview'.
-                vrView = new VRView.Player('#vrview1', {
+                vrView1 = new VRView.Player('#vrview1', {
                     image: p[1],
                     is_stereo: false,
                     width: window.innerWidth,
@@ -169,19 +130,14 @@
         <div id='vrview2'></div>
         <script>
             window.addEventListener('load', onVrViewLoad3);
-            var vrView;
-            var p = [
-                'https://losica2014.github.io/projects/src/kitchen/kitchen_cam360_light1.png',
-                'https://losica2014.github.io/projects/src/kitchen/kitchen_cam360_light2.png',
-                'https://losica2014.github.io/projects/src/kitchen/kitchen_cam360_light3.png',
-            ];
+            var vrView2;
             var p_size = {
                 width: 2048,
                 height: 1024
             }
             function onVrViewLoad3() {
                 // Selector '#vrview' finds element with id 'vrview'.
-                vrView = new VRView.Player('#vrview2', {
+                vrView2 = new VRView.Player('#vrview2', {
                     image: p[2],
                     is_stereo: false,
                     width: window.innerWidth,
