@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.orange-amber.min.css">
+
+    <script src="https://storage.googleapis.com/vrview/2.0/build/vrview.min.js"></script>
+    <style>
+        * {
+            text-align: center;
+            color: rgba(33, 33, 33, 1);
+            font-family: 'Oswald';
+            font-size: 9pt;
+        }
+
+        .slider {
+            padding: 0;
+            margin: 0;
+        }
+
+        #vrview {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        #vrview * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .switch {
+            margin: 8px;
+        }
+
+        .switch * {
+            font-family: 'Oswald';
+            font-size: 9pt;
+            padding-right: 4px;
+            /* line-height: 1.2; */
+            /* margin-top: 0px; */
+            color: rgba(33, 33, 33, 1);
+            /* overflow: hidden;
+    position: relative;
+    text-overflow: ellipsis;
+    white-space: nowrap; */
+        }
+
+        /* label {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: solid 2px white;
+    border-radius: 999px;
+    background-color: transparent;
+    margin: 95vh 6px 0 6px;
+    z-index: 2;
+    cursor: pointer;
+    transition-duration: .4s;
+  }
+
+  input:checked + label{
+    background-color: white;
+  }
+
+  input:focus + label{
+    box-shadow: 0 0 0 2px teal, 0 0 18px white;
+  } */
+    </style>
+</head>
+
+<body>
+
+
+    <div class="slider">
+        <div id='vrview'></div>
+        <span class="switch__label">Освещение 1</span>
+        <script>
+            window.addEventListener('load', onVrViewLoad);
+            var vrView;
+            var p = [
+                'https://losica2014.github.io/projects/src/livingroom/livingroom_cam360_light1_mono.png',
+                'https://losica2014.github.io/projects/src/livingroom/livingroom_cam360_light2_mono.png',
+            ];
+            var p_size = {
+                width: 4096,
+                height: 2048
+            }
+            function onVrViewLoad() {
+                // Selector '#vrview' finds element with id 'vrview'.
+                vrView = new VRView.Player('#vrview', {
+                    image: p[0],
+                    is_stereo: false,
+                    width: window.innerWidth,
+                    height: p_size.height * window.innerWidth / p_size.width
+                });
+                // 2048 innerW
+                // 1024 innerH
+            }
+        </script>
+    </div>
+    <div>
+        <div id='vrview1'></div>
+        <span class="switch__label">Освещение 2</span>
+        <script>
+            window.addEventListener('load', onVrViewLoad2);
+            var vrView1;
+            var p_size = {
+                width: 4096,
+                height: 2048
+            }
+            function onVrViewLoad2() {
+                // Selector '#vrview' finds element with id 'vrview'.
+                vrView1 = new VRView.Player('#vrview1', {
+                    image: p[1],
+                    is_stereo: false,
+                    width: window.innerWidth,
+                    height: p_size.height * window.innerWidth / p_size.width
+                });
+                // 2048 innerW
+                // 1024 innerH
+            }
+        </script>
+    </div>
+</body>
+
+</html>
